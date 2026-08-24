@@ -1,0 +1,14 @@
+# OS Files
+.DS_Store
+
+# Dev & Generator Files (Keep local only for pure static deployment)
+build.js
+content.json
+package.json
+package-lock.json
+*.code-workspace
+README.md
+
+# AI & IDE Tooling
+.agents/
+.codegraph/

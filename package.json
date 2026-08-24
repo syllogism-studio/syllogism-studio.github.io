@@ -1,8 +1,0 @@
-{
-  "name": "flashleaf-website",
-  "version": "1.0.0",
-  "description": "AEO / GEO Optimized Official Website for Flashleaf",
-  "scripts": {
-    "build": "node build.js"
-  }
-}
