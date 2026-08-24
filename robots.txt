@@ -1,0 +1,45 @@
+# ==============================================================================
+# Flashleaf (夏花工作室 Summer Flowers Studio) - Robots Configuration
+# Optimized for Search Engines & Generative AI Crawlers (AEO / GEO Optimization)
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Disallow:
+
+# AI Search & Answer Engine Crawlers (Explicitly Allowed for AEO/GEO Indexing)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap Location
+Sitemap: https://summerflowersstudio-tw.github.io/flashleaves/sitemap.xml

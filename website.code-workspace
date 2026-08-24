@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "website",
+			"path": "."
+		},
+		{
+			"name": "flashleaves",
+			"path": "../flashleaves"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO & AEO Meta Tags -->
+  <title>Flashleaf - AI 課堂筆記與記憶閃卡 | 智慧語音摘要與 FSRS 間隔重複複習 App</title>
+  <meta name="description" content="Flashleaf 是一款專為學生與自學者設計的 AI 語音課堂筆記與 FSRS 間隔重複記憶閃卡 App。支援離線語音轉文字、自動生成條列重點、動態心智圖與高效複習演算法，助你高效掌握知識、考前不遺忘。" />
+  <meta name="keywords" content="Flashleaf, AI筆記, 課堂錄音轉文字, 記憶閃卡, FSRS演算法, 間隔重複, 智慧心智圖, Anki替代, 學生必備App, 夏花工作室" />
+  <meta name="author" content="Summer Flowers Studio (夏花工作室)" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://summerflowersstudio-tw.github.io/flashleaves/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://summerflowersstudio-tw.github.io/flashleaves/" />
+  <meta property="og:title" content="Flashleaf - AI 課堂筆記與記憶閃卡 | 智慧語音摘要與 FSRS 間隔重複複習 App" />
+  <meta property="og:description" content="Flashleaf 是一款專為學生與自學者設計的 AI 語音課堂筆記與 FSRS 間隔重複記憶閃卡 App。支援離線語音轉文字、自動生成條列重點、動態心智圖與高效複習演算法，助你高效掌握知識、考前不遺忘。" />
+  <meta property="og:image" content="https://summerflowersstudio-tw.github.io/flashleaves/assets/images/og_preview.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://summerflowersstudio-tw.github.io/flashleaves/" />
+  <meta property="twitter:title" content="Flashleaf - AI 課堂筆記與記憶閃卡 | 智慧語音摘要與 FSRS 間隔重複複習 App" />
+  <meta property="twitter:description" content="Flashleaf 是一款專為學生與自學者設計的 AI 語音課堂筆記與 FSRS 間隔重複記憶閃卡 App。支援離線語音轉文字、自動生成條列重點、動態心智圖與高效複習演算法，助你高效掌握知識、考前不遺忘。" />
+  <meta property="twitter:image" content="https://summerflowersstudio-tw.github.io/flashleaves/assets/images/og_preview.png" />
+
+  <!-- Google Fonts & Tailwind CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maple: {
+              50: '#FDF8F6',
+              100: '#F9EEEC',
+              200: '#F1D7D2',
+              300: '#DB9E92',
+              400: '#D28779',
+              500: '#B85C4E',
+              600: '#A65145',
+              700: '#8E453B',
+              800: '#763A31',
+              900: '#3D2E24',
+            },
+            autumn: {
+              cream: '#FAF5F0',
+              beige: '#F8EEDF',
+              gold: '#E5C07B',
+              goldLight: '#F3D99C',
+              dark: '#1A1817',
+              cardDark: '#24201E',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Structured Data (JSON-LD) for AEO / GEO Search Engines -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://summerflowersstudio-tw.github.io/flashleaves/#application",
+      "name": "Flashleaf",
+      "operatingSystem": "Android, iOS",
+      "applicationCategory": "EducationalApplication",
+      "description": "Flashleaf 是一款專為學生與自學者設計的 AI 語音課堂筆記與 FSRS 間隔重複記憶閃卡 App。支援離線語音轉文字、自動生成條列重點、動態心智圖與高效複習演算法，助你高效掌握知識、考前不遺忘。",
+      "url": "https://summerflowersstudio-tw.github.io/flashleaves/",
+      "author": {
+        "@type": "Organization",
+        "name": "Summer Flowers Studio (夏花工作室)",
+        "url": "https://summerflowersstudio-tw.github.io/flashleaves/",
+        "email": "summerflowersstudio@gmail.com"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Flashleaf 免費基礎版",
+          "price": "0",
+          "priceCurrency": "TWD",
+          "description": "包含每日基礎 AI 課堂錄音轉寫、手動製作記憶閃卡、本地離線儲存與基礎 FSRS 複習功能。"
+        },
+        {
+          "@type": "Offer",
+          "name": "Flashleaf Bloom Pro (月訂閱)",
+          "price": "150",
+          "priceCurrency": "TWD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "150",
+            "priceCurrency": "TWD",
+            "unitText": "MONTH"
+          },
+          "description": "解鎖無限量 AI 條列式重點摘要、動態樹狀心智圖生成、無上限閃卡卡組與雲端備份同步。"
+        },
+        {
+          "@type": "Offer",
+          "name": "Flashleaf Bloom Pro (年度訂閱方案 - 享7天免費試用)",
+          "price": "1080",
+          "priceCurrency": "TWD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "1080",
+            "priceCurrency": "TWD",
+            "unitText": "YEAR"
+          },
+          "description": "年度訂閱方案平均每月僅需 NT$90（相當於 6 折優惠），全功能無限制存取，支援 7 天無風險免費試用。"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://summerflowersstudio-tw.github.io/flashleaves/#organization",
+      "name": "Summer Flowers Studio",
+      "alternateName": "夏花工作室",
+      "url": "https://summerflowersstudio-tw.github.io/flashleaves/",
+      "logo": "https://summerflowersstudio-tw.github.io/flashleaves/assets/images/app_icon.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "summerflowersstudio@gmail.com",
+        "contactType": "Customer Support",
+        "availableLanguage": [
+          "zh-TW",
+          "en"
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://summerflowersstudio-tw.github.io/flashleaves/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Flashleaf 是什麼應用程式？與傳統筆記軟體有何不同？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "【直接解答】Flashleaf 是一款專為學習者整合「AI 課堂語音轉寫」、「結構化摘要」與「FSRS 間隔重複記憶閃卡」的智慧學習應用程式。 傳統筆記軟體（如 Notion、GoodNotes）僅能單純記錄文字，使用者課後仍需耗費大量時間手動整理並容易遺忘；Flashleaf 透過 AI 自動將課堂語音提煉為重點與雙面閃卡，並由 FSRS 演算法科學排程複習，實現「上課聽懂、下課有筆記、考前牢記不忘」的完整學習循環。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Flashleaf 的語音辨識會不會洩漏我的課堂錄音或隱私？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "【直接解答】不會。Flashleaf 採用本地離線語音辨識（Sherpa-ONNX）與高規格 HTTPS / TLS 加密架構，確保您的錄音與個人資料受到嚴密保護。 離線語音模型直接在使用者手機端執行語音轉文字運算，未經您的操作不會擅自上傳音訊。同時，使用者的所有雲端資料皆採用 Firebase 企業級安全認證隔離，絕不會被用於未授權的第三方訓練。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "什麼是 FSRS 演算法？Flashleaf 的閃卡複習是如何運作的？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "【直接解答】FSRS（Free Spaced Repetition Scheduler）是現代記憶科學界廣受推崇的間隔重複演算法，能根據使用者的真實記憶狀況動態調節複習週期。 FSRS 能評估卡片記憶在不同時間點的衰減狀況，並依據您每次作答的評分（忘記 / 困難 / 良好 / 簡單）動態計算下次複習的最佳間隔，幫助學習者在適當時機鞏固記憶，改善傳統排程卡片積壓與無效重複刷題的問題。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Flashleaf 的收費方式為何？如何取消訂閱？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "【直接解答】Flashleaf 提供永久免費基礎版；升級 Bloom Pro 提供月繳 NT$150、半年繳 NT$720 或年繳 NT$1,080（年方案享 7 天免費試用）。 所有訂閱皆透過 Google Play 官方金流系統進行安全扣款。使用者可隨時至 Google Play 商店 >「個人帳戶」>「付款與訂閱」中一鍵取消續訂，取消後仍可正常使用服務至當前週期結束。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如果更換手機或不再使用，如何備份資料或徹底刪除帳號？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "【直接解答】使用者在 App 設定中登入 Google 帳號後即可自動同步雲端資料；若需刪除帳號，可隨時在 App 內點擊「刪除帳號」進行即時徹底清理。 依據 Google Play 資料安全規範，執行刪除帳號後，伺服器上所有屬於該帳號的個人資料、筆記、卡片與錄音快取將於 7 個工作天內全數永久銷毀。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Flashleaf 由哪支團隊開發？遇到技術問題如何聯絡客服？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "【直接解答】Flashleaf 由台灣獨立團隊 Summer Flowers Studio（夏花工作室）開發與維護。 若您有任何功能建議、Bug 回報或商務合作需求，歡迎直接發送電子郵件至客服信箱：summerflowersstudio@gmail.com，我們將於 24 小時內為您回覆。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #FAF5F0; }
+    ::-webkit-scrollbar-thumb { background: #DB9E92; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #B85C4E; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(229, 224, 218, 0.7);
+    }
+    .glass-card-dark {
+      background: rgba(30, 26, 24, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glow-maple { box-shadow: 0 10px 40px -10px rgba(184, 92, 78, 0.3); }
+    .glow-gold { box-shadow: 0 10px 40px -10px rgba(229, 192, 123, 0.25); }
+  </style>
+</head>
+
+<body class="bg-autumn-cream text-maple-900 font-sans antialiased selection:bg-maple-200 selection:text-maple-900">
+
+  <!-- 1. Top Announcement Bar -->
+  <div class="bg-maple-500 text-white text-xs sm:text-sm font-medium py-2 px-4 text-center flex items-center justify-center space-x-2">
+    <span class="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-semibold">🎉 全新發布</span>
+    <span>Flashleaf Android 正式版上線！立即下載體驗 7 天 Bloom Pro 免費試用</span>
+    <a href="#pricing" class="underline hover:text-autumn-gold font-bold ml-1">查看方案 →</a>
+  </div>
+
+  <!-- 2. Header & Nav -->
+  <header class="sticky top-0 z-50 bg-autumn-cream/80 backdrop-blur-md border-b border-maple-200/60 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-maple-500 to-maple-700 flex items-center justify-center text-white shadow-md shadow-maple-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="leaf" class="w-5 h-5 text-autumn-gold fill-autumn-gold/30"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-black tracking-tight text-maple-900 font-sans">Flashleaf</span>
+          <span class="text-[10px] tracking-wider text-maple-500 font-bold uppercase -mt-1">AI 課堂筆記與閃卡</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-maple-800">
+        <a href="#features" class="hover:text-maple-500 transition-colors">核心功能</a>
+        <a href="#fsrs" class="hover:text-maple-500 transition-colors">FSRS 演算法</a>
+        <a href="#pricing" class="hover:text-maple-500 transition-colors">方案與定價</a>
+        <a href="#faq" class="hover:text-maple-500 transition-colors">常見問題 (FAQ)</a>
+        <a href="#privacy" class="hover:text-maple-500 transition-colors">隱私與條款</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a href="https://play.google.com/store/apps/details?id=com.summerflowersstudio.flashleaf" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center space-x-2 bg-maple-500 hover:bg-maple-600 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-lg shadow-maple-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>免費下載 App</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. HERO SECTION -->
+  <section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-maple-300/30 to-autumn-gold/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-maple-400/10 rounded-full blur-2xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        <div class="inline-flex items-center space-x-2 bg-white/80 border border-maple-200 px-4 py-1.5 rounded-full shadow-sm">
+          <i data-lucide="sparkles" class="w-4 h-4 text-maple-500"></i>
+          <span class="text-xs sm:text-sm font-bold text-maple-700">次世代 AI 學習助手 × 認知科學記憶法</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-maple-900 tracking-tight leading-[1.15]">
+          讓課堂錄音即刻轉化為<br class="hidden sm:inline" />
+          <span class="bg-gradient-to-r from-maple-500 via-maple-600 to-autumn-gold bg-clip-text text-transparent">AI 結構化筆記與記憶閃卡</span>
+        </h1>
+
+        <p class="text-base sm:text-xl text-maple-800/90 leading-relaxed font-normal">
+          Flashleaf 是一款專為學生、國考考生與終身學習者打造的智慧課堂輔助 App。結合離線語音轉文字、AI 條列式核心摘要、動態心智圖與次世代 FSRS 間隔重複複習演算法，徹底告別手忙腳亂的抄寫，讓每一份知識在考前都能牢固記住。
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://play.google.com/store/apps/details?id=com.summerflowersstudio.flashleaf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-maple-500 hover:bg-maple-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-maple-500/30 transition-all hover:scale-105 active:scale-95 text-base">
+            <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+            <span>前往 Google Play 免費下載</span>
+          </a>
+          <a href="#features" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/90 hover:bg-white text-maple-900 border border-maple-200 font-bold px-7 py-4 rounded-2xl shadow-sm transition-all hover:shadow-md text-base">
+            <i data-lucide="compass" class="w-5 h-5 text-maple-500"></i>
+            <span>探索完整核心功能</span>
+          </a>
+        </div>
+
+        <div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-maple-700/80 font-medium">
+          
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+            <span>離線本地語音隱私保護</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="brain-circuit" class="w-4 h-4 text-maple-500"></i>
+            <span>次世代 FSRS 記憶科學</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <i data-lucide="gift" class="w-4 h-4 text-amber-600"></i>
+            <span>基礎版永久免費・Pro 享 7 天試用</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Cards -->
+      <div class="mt-14 max-w-5xl mx-auto">
+        <div class="relative rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-white/90 to-white/40 border border-white/80 shadow-2xl shadow-maple-900/10 backdrop-blur-xl">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <div class="bg-white rounded-2xl p-5 border border-maple-100 shadow-sm flex flex-col justify-between space-y-4">
+              <div class="space-y-3">
+                <div class="w-9 h-9 rounded-lg bg-red-100 text-maple-600 flex items-center justify-center">
+                  <i data-lucide="mic" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-maple-900 text-base">1. 課堂語音一鍵擷取</h3>
+                <p class="text-xs text-maple-700 leading-relaxed">支援背景長時間連續錄音與離線語音轉文字（ASR），法學教授講解不漏接。</p>
+              </div>
+              <div class="bg-autumn-cream p-3 rounded-xl border border-maple-200/60 text-[11px] text-maple-800 space-y-1 font-mono">
+                <div class="flex items-center space-x-2 text-maple-500 font-bold">
+                  <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                  <span>錄音轉寫中 • 00:42:15</span>
+                </div>
+                <div class="text-maple-600 truncate">「...民法第184條第1項前段保護客體限於絕對權，若為純粹經濟損失，需依第1項後段或第2項主張...」</div>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-maple-100 shadow-sm flex flex-col justify-between space-y-4">
+              <div class="space-y-3">
+                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
+                  <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-maple-900 text-base">2. AI 萃取條列重點與心智圖</h3>
+                <p class="text-xs text-maple-700 leading-relaxed">自動將長篇錄音提煉為階層式 Markdown 摘要，並即時渲染法學體系動態心智圖。</p>
+              </div>
+              <div class="bg-autumn-cream p-3 rounded-xl border border-maple-200/60 text-[11px] text-maple-800 space-y-1 font-mono">
+                <div class="flex items-center space-x-2 text-maple-900 font-bold">
+                  
+                  <span>🧠 核心概念節點</span>
+                </div>
+                <div class="text-maple-600 whitespace-pre-line">📌 184條第1項前段 ➔ 權利侵害（固有利益）
+📌 184條第1項後段 ➔ 故意背於善良風俗（含純粹經濟損失）
+📌 184條第2項 ➔ 違反保護他人之法律（推定過失）</div>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-maple-100 shadow-sm flex flex-col justify-between space-y-4">
+              <div class="space-y-3">
+                <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-maple-900 text-base">3. FSRS 演算法精準複習</h3>
+                <p class="text-xs text-maple-700 leading-relaxed">將法條要件一鍵轉化為記憶閃卡，依個人遺忘曲線排程，國考法條牢固掌握。</p>
+              </div>
+              <div class="bg-autumn-cream p-3 rounded-xl border border-maple-200/60 text-[11px] text-maple-800 space-y-1 font-mono">
+                <div class="flex items-center space-x-2 text-maple-900 font-bold">
+                  
+                  <span>今日待複習法條卡</span>
+                </div>
+                <div class="text-maple-600 whitespace-pre-line">Q: 民法184條第1項前段是否包含純粹經濟損失？
+➔ [忘記 1天] [困難 3天] [掌握 7天]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CORE FEATURES -->
+  <section id="features" class="py-20 bg-white/70 border-y border-maple-200/70 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-xs sm:text-sm font-bold tracking-widest text-maple-500 uppercase">Product Core Capabilities</h2>
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-maple-900">四大核心功能，重新定義你的學習工作流</h3>
+        <p class="text-maple-700 text-sm sm:text-base">Flashleaf 將「聽講輸入」、「知識內化」與「長期記憶」整合為單一閉環，解決傳統學習方式零碎斷層的問題。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <article class="glass-card rounded-3xl p-8 transition-all hover:shadow-xl hover:border-maple-300 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-maple-100 text-maple-600 flex items-center justify-center">
+            <i data-lucide="mic" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-maple-900">課堂即時語音轉文字與離線辨識技術</h4>
+          <p class="text-maple-800 text-sm leading-relaxed">Flashleaf 內建高效語音引擎，支援前台與後台背景持續錄音。即使在教室沒有網路連線，亦可透過本地端 Sherpa-ONNX 離線聲學模型即時轉錄中文與英文語音，保障隱私且不耗費行動數據流量。</p>
+          <ul class="text-xs text-maple-700 space-y-2 pt-2 border-t border-maple-100">
+            
+            <li class="flex items-center space-x-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <span>支援長達數小時之課堂演講背景連續錄音</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <span>本地離線 ASR 模型，語音不強制上傳外部伺服器</span>
+            </li>
+          </ul>
+        </article>
+        <article class="glass-card rounded-3xl p-8 transition-all hover:shadow-xl hover:border-maple-300 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-maple-900">AI 結構化條列式摘要與考點萃取</h4>
+          <p class="text-maple-800 text-sm leading-relaxed">利用頂尖生成式 AI 技術，將冗長紛雜的課堂逐字稿快速整理為條理分明的 Markdown 重點筆記。系統能自動辨識核心定義、考試重點、推導流程與案例，大幅省去課後重複整理筆記的心力。</p>
+          <ul class="text-xs text-maple-700 space-y-2 pt-2 border-t border-maple-100">
+            
+            <li class="flex items-center space-x-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <span>自動去除口語贅字、重複語句與無效雜訊</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <span>自動標註重點關鍵字與段落小結</span>
+            </li>
+          </ul>
+        </article>
+        <article class="glass-card rounded-3xl p-8 transition-all hover:shadow-xl hover:border-maple-300 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
+            <i data-lucide="network" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-maple-900">動態樹狀心智圖自動生成</h4>
+          <p class="text-maple-800 text-sm leading-relaxed">人類大腦對視覺化結構的理解速度遠快於純文字。Flashleaf 能依據筆記內容自動建構互動式動態樹狀圖（Mindmap），視覺化呈現章節架構與知識節點之間的關聯性，助你掌握全貌。</p>
+          <ul class="text-xs text-maple-700 space-y-2 pt-2 border-t border-maple-100">
+            
+            <li class="flex items-center space-x-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <span>支援節點自由縮放、展開與層級導航</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <span>一鍵將心智圖節點轉化為記憶閃卡</span>
+            </li>
+          </ul>
+        </article>
+        <article class="glass-card rounded-3xl p-8 transition-all hover:shadow-xl hover:border-maple-300 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+            <i data-lucide="brain" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-xl font-bold text-maple-900">次世代 FSRS 間隔重複記憶閃卡系統</h4>
+          <p class="text-maple-800 text-sm leading-relaxed">採用比傳統 Anki SM-2 更先進的 FSRS (Free Spaced Repetition Scheduler) 記憶演算法。根據每張卡片的難度、穩定性與可提取性動態調整複習週期，在遺忘臨界點前精準提醒。</p>
+          <ul class="text-xs text-maple-700 space-y-2 pt-2 border-t border-maple-100">
+            
+            <li class="flex items-center space-x-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <span>雙面卡片翻轉設計，支援填空題與概念題</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <span>即時統計每日學習楓葉進度與留存率指標</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FSRS SECTION -->
+  <section id="fsrs" class="py-20 bg-autumn-beige/50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center space-x-2 bg-maple-500/10 text-maple-600 px-3.5 py-1 rounded-full text-xs font-bold">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>記憶科學革命</span>
+          </div>
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-maple-900 tracking-tight leading-tight whitespace-pre-line">
+            為什麼 Flashleaf 選擇 FSRS
+而非傳統的 SM-2 演算法？
+          </h3>
+          <p class="text-maple-800 text-sm sm:text-base leading-relaxed">傳統記憶卡軟體（如早期 Anki）多半採用 1980 年代開發的 SM-2 演算法，容易在卡片累積過多時造成「複習地獄（Review Hell）」與排程僵化。</p>
+          <p class="text-maple-800 text-sm sm:text-base leading-relaxed">Flashleaf 全面導入 FSRS（自由間隔重複排程演算法），基於近代認知心理學與現代資料科學模型，能根據你的真實作答記錄精確計算：</p>
+          
+          <div class="grid grid-cols-3 gap-4 pt-2">
+            
+            <div class="bg-white p-4 rounded-2xl border border-maple-200 text-center space-y-1">
+              <div class="text-xs font-bold text-maple-500">難度 (Difficulty)</div>
+              <div class="text-[11px] text-maple-700">自動評估卡片記憶阻力</div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl border border-maple-200 text-center space-y-1">
+              <div class="text-xs font-bold text-maple-500">穩定度 (Stability)</div>
+              <div class="text-[11px] text-maple-700">精準預測記憶存續天數</div>
+            </div>
+            <div class="bg-white p-4 rounded-2xl border border-maple-200 text-center space-y-1">
+              <div class="text-xs font-bold text-maple-500">可提取性 (Retrievability)</div>
+              <div class="text-[11px] text-maple-700">鎖定最佳複習時間點</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-maple-200 shadow-xl space-y-6">
+            <h4 class="font-bold text-maple-900 text-lg border-b border-maple-100 pb-3">演算法機制客觀對比</h4>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span class="text-maple-900">Flashleaf FSRS 演算法</span>
+                  <span class="text-emerald-600">動態評估難度與遺忘臨界點</span>
+                </div>
+                <div class="w-full bg-maple-100 h-3 rounded-full overflow-hidden">
+                  <div class="bg-gradient-to-r from-maple-500 to-emerald-500 h-full rounded-full w-[90%]"></div>
+                </div>
+                <div class="text-[11px] text-maple-600 mt-1">根據每張卡片的穩定度與作答表現彈性排程，有效降低無效重複</div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1 text-maple-700">
+                  <span>傳統 SM-2 演算法</span>
+                  <span>固定加權容易造成卡片過度積壓</span>
+                </div>
+                <div class="w-full bg-stone-200 h-3 rounded-full overflow-hidden">
+                  <div class="bg-stone-400 h-full rounded-full w-[55%]"></div>
+                </div>
+                <div class="text-[11px] text-maple-600 mt-1">依賴固定乘數調整間隔，較難因應不同個體的遺忘規律</div>
+              </div>
+            </div>
+
+            <div class="bg-maple-50 p-4 rounded-2xl border border-maple-200/80 text-xs text-maple-800 leading-relaxed">
+              💡 <strong>核心優勢</strong>：透過 FSRS 系統，排程更加貼近真實記憶衰減規律，幫助學習者在適當的時機進行重點複習，避免在已熟記的內容上耗費過多時間。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PRICING -->
+  <section id="pricing" class="py-20 bg-autumn-dark text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-autumn-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-xs sm:text-sm font-bold tracking-widest text-autumn-gold uppercase">Transparent Pricing Plans</h2>
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">透明且靈活的方案，專為學習進度量身打造</h3>
+        <p class="text-white/70 text-sm sm:text-base">Flashleaf 基礎功能永久免費使用。升級 Flashleaf Bloom Pro 解鎖無限 AI 算力與全功能。</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <!-- Free Plan -->
+        <div class="glass-card-dark rounded-3xl p-8 flex flex-col justify-between border border-white/10 space-y-6">
+          <div class="space-y-4">
+            <div class="inline-block bg-white/10 text-white/90 text-xs font-bold px-3 py-1 rounded-full">永久免費</div>
+            <h4 class="text-2xl font-bold text-white">免費基礎版 (Free)</h4>
+            <p class="text-white/60 text-xs leading-relaxed">適合初次體驗 AI 課堂筆記與日常手動製作單字閃卡的使用者。</p>
+            <div class="pt-2">
+              <span class="text-4xl font-black text-white">NT$ 0</span>
+              <span class="text-white/50 text-xs">/ 永久免費</span>
+            </div>
+            <ul class="space-y-3 pt-4 border-t border-white/10 text-xs text-white/80">
+              
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>每日基礎課堂語音轉文字 (ASR)</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>手動建立筆記與雙面記憶閃卡</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>完整 FSRS 演算法間隔複習排程</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>本機裝置離線資料儲存</span>
+              </li>
+              
+              <li class="flex items-center space-x-2.5 text-white/30">
+                <i data-lucide="x" class="w-4 h-4 text-white/20"></i>
+                <span>進階 AI 條列式總結與考點萃取 (每日次數限制)</span>
+              </li>
+              <li class="flex items-center space-x-2.5 text-white/30">
+                <i data-lucide="x" class="w-4 h-4 text-white/20"></i>
+                <span>動態樹狀心智圖自動生成</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.summerflowersstudio.flashleaf" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3.5 rounded-2xl transition-all text-sm border border-white/20">
+            開始免費使用
+          </a>
+        </div>
+
+        <!-- Featured Annual Plan -->
+        <div class="relative bg-gradient-to-b from-[#2C2420] to-[#1C1A18] rounded-3xl p-8 flex flex-col justify-between border-2 border-autumn-gold glow-gold space-y-6 transform lg:-translate-y-4">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-autumn-gold to-amber-500 text-maple-900 text-xs font-black px-4 py-1 rounded-full shadow-md uppercase tracking-wider">
+            🔥 最超值推薦・享 7 天免費試用
+          </div>
+          <div class="space-y-4 pt-2">
+            <div class="inline-block bg-autumn-gold/20 text-autumn-gold text-xs font-bold px-3 py-1 rounded-full border border-autumn-gold/30">
+              Flashleaf Bloom 年度方案
+            </div>
+            <h4 class="text-2xl font-bold text-white">Bloom Pro (年訂閱)</h4>
+            <p class="text-white/70 text-xs leading-relaxed">全面解鎖所有 AI 功能、無上限生成與動態心智圖，考生與專注學習者的終極利器。</p>
+            <div class="pt-2 flex items-baseline space-x-2">
+              <span class="text-4xl font-black text-autumn-gold">NT$ 1,080</span>
+              <span class="text-white/60 text-xs">/ 年 (相當於 NT$ 90 / 月)</span>
+            </div>
+            <div class="text-[11px] text-emerald-400 font-bold bg-emerald-950/60 border border-emerald-500/30 px-3 py-1.5 rounded-xl">
+              ✨ 比月訂閱節省高達 40% 費用，前 7 天完全免費試用
+            </div>
+            <ul class="space-y-3 pt-4 border-t border-white/10 text-xs text-white/90">
+              
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-autumn-gold"></i>
+                <span class="font-bold text-white">無限量 AI 課堂錄音即時條列摘要</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-autumn-gold"></i>
+                <span class="font-bold text-white">動態樹狀心智圖無限制自動生成</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-autumn-gold"></i>
+                <span class="font-bold text-white">無上限閃卡卡組與 AI 一鍵製卡</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-autumn-gold"></i>
+                <span class="font-bold text-white">次世代 FSRS 深度演算法排程與留存率分析</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-autumn-gold"></i>
+                <span class="font-bold text-white">雲端備份與跨裝置即時同步</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-autumn-gold"></i>
+                <span class="font-bold text-white">專屬客服支援與優先搶先體驗新功能</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.summerflowersstudio.flashleaf" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-gradient-to-r from-autumn-gold via-amber-400 to-autumn-gold text-maple-900 font-extrabold py-4 rounded-2xl shadow-lg shadow-autumn-gold/20 transition-all hover:scale-[1.02] text-sm">
+            立即免費試用 7 天
+          </a>
+        </div>
+
+        <!-- Monthly & 6-Month Plan -->
+        <div class="glass-card-dark rounded-3xl p-8 flex flex-col justify-between border border-white/10 space-y-6">
+          <div class="space-y-4">
+            <div class="inline-block bg-white/10 text-white/90 text-xs font-bold px-3 py-1 rounded-full">彈性短期訂閱</div>
+            <h4 class="text-2xl font-bold text-white">Bloom Pro (月/半年方案)</h4>
+            <p class="text-white/60 text-xs leading-relaxed">依據學期或考季需求自由選擇，隨時可在 Google Play 訂閱管理中取消。</p>
+            <div class="space-y-3 pt-2">
+              
+              <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex justify-between items-center">
+                <div>
+                  <div class="text-xs text-white/70 font-semibold">月訂閱方案</div>
+                  <div class="text-[11px] text-white/40">每月自動續訂</div>
+                </div>
+                <div class="text-right">
+                  <span class="text-xl font-bold text-white">NT$ 150</span>
+                  <span class="text-[10px] text-white/50">/月</span>
+                </div>
+              </div>
+              <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex justify-between items-center">
+                <div>
+                  <div class="text-xs text-white/70 font-semibold">半年訂閱方案 (6個月)</div>
+                  <div class="text-[11px] text-emerald-400">相當於 NT$ 120/月 (省 20%)</div>
+                </div>
+                <div class="text-right">
+                  <span class="text-xl font-bold text-white">NT$ 720</span>
+                  <span class="text-[10px] text-white/50">/6個月</span>
+                </div>
+              </div>
+            </div>
+            <ul class="space-y-3 pt-4 border-t border-white/10 text-xs text-white/80">
+              
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>享與年訂閱相同之全部 Bloom Pro 高級功能</span>
+              </li>
+              <li class="flex items-center space-x-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>無綁約負擔，可隨時暫停或終止續訂</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.summerflowersstudio.flashleaf" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3.5 rounded-2xl transition-all text-sm border border-white/20">
+            在 App 內選購方案
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section id="faq" class="py-20 bg-autumn-cream relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-xs sm:text-sm font-bold tracking-widest text-maple-500 uppercase">Frequently Asked Questions</h2>
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-maple-900">常見問題解答 (FAQ)</h3>
+        <p class="text-maple-700 text-sm sm:text-base">針對 Flashleaf 的功能運作、安全性、演算法原理與訂閱權益之詳細說明。</p>
+      </div>
+
+      <div class="space-y-6">
+        
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-maple-200/80 shadow-sm space-y-3">
+          <h4 class="text-lg font-bold text-maple-900 flex items-start space-x-3">
+            <span class="text-maple-500 font-extrabold">Q1.</span>
+            <span>Flashleaf 是什麼應用程式？與傳統筆記軟體有何不同？</span>
+          </h4>
+          <div class="text-sm text-maple-800 leading-relaxed pl-7 space-y-2">
+            <p class="font-semibold text-maple-900">【直接解答】Flashleaf 是一款專為學習者整合「AI 課堂語音轉寫」、「結構化摘要」與「FSRS 間隔重複記憶閃卡」的智慧學習應用程式。</p>
+            <p>傳統筆記軟體（如 Notion、GoodNotes）僅能單純記錄文字，使用者課後仍需耗費大量時間手動整理並容易遺忘；Flashleaf 透過 AI 自動將課堂語音提煉為重點與雙面閃卡，並由 FSRS 演算法科學排程複習，實現「上課聽懂、下課有筆記、考前牢記不忘」的完整學習循環。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-maple-200/80 shadow-sm space-y-3">
+          <h4 class="text-lg font-bold text-maple-900 flex items-start space-x-3">
+            <span class="text-maple-500 font-extrabold">Q2.</span>
+            <span>Flashleaf 的語音辨識會不會洩漏我的課堂錄音或隱私？</span>
+          </h4>
+          <div class="text-sm text-maple-800 leading-relaxed pl-7 space-y-2">
+            <p class="font-semibold text-maple-900">【直接解答】不會。Flashleaf 採用本地離線語音辨識（Sherpa-ONNX）與高規格 HTTPS / TLS 加密架構，確保您的錄音與個人資料受到嚴密保護。</p>
+            <p>離線語音模型直接在使用者手機端執行語音轉文字運算，未經您的操作不會擅自上傳音訊。同時，使用者的所有雲端資料皆採用 Firebase 企業級安全認證隔離，絕不會被用於未授權的第三方訓練。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-maple-200/80 shadow-sm space-y-3">
+          <h4 class="text-lg font-bold text-maple-900 flex items-start space-x-3">
+            <span class="text-maple-500 font-extrabold">Q3.</span>
+            <span>什麼是 FSRS 演算法？Flashleaf 的閃卡複習是如何運作的？</span>
+          </h4>
+          <div class="text-sm text-maple-800 leading-relaxed pl-7 space-y-2">
+            <p class="font-semibold text-maple-900">【直接解答】FSRS（Free Spaced Repetition Scheduler）是現代記憶科學界廣受推崇的間隔重複演算法，能根據使用者的真實記憶狀況動態調節複習週期。</p>
+            <p>FSRS 能評估卡片記憶在不同時間點的衰減狀況，並依據您每次作答的評分（忘記 / 困難 / 良好 / 簡單）動態計算下次複習的最佳間隔，幫助學習者在適當時機鞏固記憶，改善傳統排程卡片積壓與無效重複刷題的問題。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-maple-200/80 shadow-sm space-y-3">
+          <h4 class="text-lg font-bold text-maple-900 flex items-start space-x-3">
+            <span class="text-maple-500 font-extrabold">Q4.</span>
+            <span>Flashleaf 的收費方式為何？如何取消訂閱？</span>
+          </h4>
+          <div class="text-sm text-maple-800 leading-relaxed pl-7 space-y-2">
+            <p class="font-semibold text-maple-900">【直接解答】Flashleaf 提供永久免費基礎版；升級 Bloom Pro 提供月繳 NT$150、半年繳 NT$720 或年繳 NT$1,080（年方案享 7 天免費試用）。</p>
+            <p>所有訂閱皆透過 Google Play 官方金流系統進行安全扣款。使用者可隨時至 Google Play 商店 >「個人帳戶」>「付款與訂閱」中一鍵取消續訂，取消後仍可正常使用服務至當前週期結束。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-maple-200/80 shadow-sm space-y-3">
+          <h4 class="text-lg font-bold text-maple-900 flex items-start space-x-3">
+            <span class="text-maple-500 font-extrabold">Q5.</span>
+            <span>如果更換手機或不再使用，如何備份資料或徹底刪除帳號？</span>
+          </h4>
+          <div class="text-sm text-maple-800 leading-relaxed pl-7 space-y-2">
+            <p class="font-semibold text-maple-900">【直接解答】使用者在 App 設定中登入 Google 帳號後即可自動同步雲端資料；若需刪除帳號，可隨時在 App 內點擊「刪除帳號」進行即時徹底清理。</p>
+            <p>依據 Google Play 資料安全規範，執行刪除帳號後，伺服器上所有屬於該帳號的個人資料、筆記、卡片與錄音快取將於 7 個工作天內全數永久銷毀。</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-maple-200/80 shadow-sm space-y-3">
+          <h4 class="text-lg font-bold text-maple-900 flex items-start space-x-3">
+            <span class="text-maple-500 font-extrabold">Q6.</span>
+            <span>Flashleaf 由哪支團隊開發？遇到技術問題如何聯絡客服？</span>
+          </h4>
+          <div class="text-sm text-maple-800 leading-relaxed pl-7 space-y-2">
+            <p class="font-semibold text-maple-900">【直接解答】Flashleaf 由台灣獨立團隊 Summer Flowers Studio（夏花工作室）開發與維護。</p>
+            <p>若您有任何功能建議、Bug 回報或商務合作需求，歡迎直接發送電子郵件至客服信箱：summerflowersstudio@gmail.com，我們將於 24 小時內為您回覆。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PRIVACY SUMMARY -->
+  <section id="privacy" class="py-16 bg-white border-t border-maple-200/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-10">
+        <h3 class="text-2xl font-bold text-maple-900">隱私權政策與服務承諾</h3>
+        <p class="text-xs sm:text-sm text-maple-700">我們高度重視使用者的個人隱私與資料安全，遵循 Google Play Developer Policy 與國際隱私法規標準。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-maple-800">
+        
+        <div class="p-5 rounded-2xl bg-autumn-cream border border-maple-200/70 space-y-2">
+          <div class="font-bold text-maple-900 text-sm flex items-center space-x-2">
+            <i data-lucide="database" class="w-4 h-4 text-maple-500"></i>
+            <span>資料收集聲明</span>
+          </div>
+          <p class="text-maple-700 leading-relaxed">我們僅收集用於使用者驗證之 Google 帳號基本資訊（姓名、電子郵件）以及使用者主動建立的學習筆記。音訊僅在使用者主動點擊錄音時於本地處理。</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-autumn-cream border border-maple-200/70 space-y-2">
+          <div class="font-bold text-maple-900 text-sm flex items-center space-x-2">
+            <i data-lucide="lock" class="w-4 h-4 text-emerald-600"></i>
+            <span>傳輸加密與防護</span>
+          </div>
+          <p class="text-maple-700 leading-relaxed">所有資料傳輸均經由嚴格的 HTTPS / TLS 加密協定，並由 Firebase 安全規則（Security Rules）限制僅有使用者本人能夠讀寫名下之筆記與閃卡資料。</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-autumn-cream border border-maple-200/70 space-y-2">
+          <div class="font-bold text-maple-900 text-sm flex items-center space-x-2">
+            <i data-lucide="user-x" class="w-4 h-4 text-red-600"></i>
+            <span>帳號與資料刪除權</span>
+          </div>
+          <p class="text-maple-700 leading-relaxed">使用者擁有完整的個人資料自主權。您可隨時在 App 內執行「刪除帳號」，或聯繫 summerflowersstudio@gmail.com 申請永久銷毀。</p>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-maple-100 flex flex-wrap justify-center gap-6 text-xs text-maple-600">
+        <a href="privacy.html" class="hover:text-maple-900 font-semibold underline">完整隱私權政策全文 (Privacy Policy) &rarr;</a>
+        <a href="terms.html" class="hover:text-maple-900 font-semibold underline">使用者服務條款 (Terms of Service) &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CTA SECTION -->
+  <section class="py-20 bg-gradient-to-br from-maple-600 via-maple-700 to-maple-900 text-white relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+      <div class="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mx-auto text-autumn-gold shadow-xl">
+        <i data-lucide="sparkles" class="w-8 h-8"></i>
+      </div>
+      <div class="space-y-4 max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight whitespace-pre-line">
+          準備好讓每一次學習
+都開花結果了嗎？
+        </h2>
+        <p class="text-white/80 text-sm sm:text-base leading-relaxed">立即免費下載 Flashleaf，開啟 AI 課堂筆記與 FSRS 高效記憶的全新學習體驗。</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a href="https://play.google.com/store/apps/details?id=com.summerflowersstudio.flashleaf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-white text-maple-900 hover:bg-autumn-gold font-extrabold px-9 py-4 rounded-2xl shadow-2xl shadow-black/30 transition-all hover:scale-105 text-base">
+          <i data-lucide="download" class="w-5 h-5"></i>
+          <span>免費下載 Android 版</span>
+        </a>
+      </div>
+
+      <div class="text-xs text-white/50 pt-4">適用於 Android 8.0 以上之智慧型手機與平板電腦・iOS 版本即將推出</div>
+    </div>
+  </section>
+
+  <!-- 10. FOOTER -->
+  <footer class="bg-autumn-dark text-white/60 text-xs py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-maple-500 flex items-center justify-center text-white">
+            <i data-lucide="leaf" class="w-4 h-4 text-autumn-gold fill-autumn-gold/30"></i>
+          </div>
+          <div>
+            <div class="text-white font-bold text-sm">Flashleaf</div>
+            <div class="text-[10px] text-white/40">AI 課堂筆記與記憶閃卡</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-xs text-white/70">
+          <a href="#features" class="hover:text-white transition-colors">核心功能</a>
+          <a href="#fsrs" class="hover:text-white transition-colors">FSRS 演算法</a>
+          <a href="#pricing" class="hover:text-white transition-colors">方案與定價</a>
+          <a href="#faq" class="hover:text-white transition-colors">常見問題</a>
+          <a href="privacy.html" class="hover:text-white transition-colors">隱私權政策</a>
+          <a href="terms.html" class="hover:text-white transition-colors">服務條款</a>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-white/40">
+        <div>Copyright © 2026 Summer Flowers Studio (夏花工作室). All rights reserved.</div>
+        <div class="flex items-center space-x-4">
+          <span>客服信箱：<a href="mailto:summerflowersstudio@gmail.com" class="text-white/60 hover:text-white underline">summerflowersstudio@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

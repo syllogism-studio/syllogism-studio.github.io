@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "title": "Flashleaf - AI 課堂筆記與記憶閃卡 | 智慧語音摘要與 FSRS 間隔重複複習 App",
+    "description": "Flashleaf 是一款專為學生與自學者設計的 AI 語音課堂筆記與 FSRS 間隔重複記憶閃卡 App。支援離線語音轉文字、自動生成條列重點、動態心智圖與高效複習演算法，助你高效掌握知識、考前不遺忘。",
+    "keywords": "Flashleaf, AI筆記, 課堂錄音轉文字, 記憶閃卡, FSRS演算法, 間隔重複, 智慧心智圖, Anki替代, 學生必備App, 夏花工作室",
+    "author": "Summer Flowers Studio (夏花工作室)",
+    "canonicalUrl": "https://summerflowersstudio-tw.github.io/flashleaves/",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.summerflowersstudio.flashleaf",
+    "supportEmail": "summerflowersstudio@gmail.com"
+  },
+  "topBanner": {
+    "badge": "🎉 全新發布",
+    "text": "Flashleaf Android 正式版上線！立即下載體驗 7 天 Bloom Pro 免費試用",
+    "actionText": "查看方案 →"
+  },
+  "hero": {
+    "badge": "AI 學習助手 × 認知科學記憶法",
+    "titleMain": "讓課堂錄音即刻轉化為",
+    "titleHighlight": "AI 結構化筆記與記憶閃卡",
+    "description": "Flashleaf 是一款專為學生、國考考生與終身學習者打造的智慧課堂輔助 App。結合離線語音轉文字、AI 條列式核心摘要、動態心智圖與次世代 FSRS 間隔重複複習演算法，徹底告別手忙腳亂的抄寫，讓每一份知識在考前都能牢固記住。",
+    "primaryCta": "前往 Google Play 免費下載",
+    "secondaryCta": "探索完整核心功能",
+    "trustBadges": [
+      "離線本地語音隱私保護",
+      "次世代 FSRS 記憶科學",
+      "基礎版永久免費・Pro 享 7 天試用"
+    ]
+  },
+  "previewCards": [
+    {
+      "step": "1. 課堂語音一鍵擷取",
+      "description": "支援背景長時間連續錄音與離線語音轉文字（ASR），老師講解不漏接。",
+      "snippetTitle": "錄音轉寫中 • 00:42:15",
+      "snippetContent": "「...民法第184條第1項前段保護客體限於絕對權，若為純粹經濟損失，需依第1項後段或第2項主張...」"
+    },
+    {
+      "step": "2. AI 萃取條列重點與心智圖",
+      "description": "自動將長篇錄音提煉為階層式 Markdown 摘要，並即時渲染法學體系動態心智圖。",
+      "snippetTitle": "🧠 核心概念節點",
+      "snippetContent": "📌 184條第1項前段 ➔ 權利侵害（固有利益）\n📌 184條第1項後段 ➔ 故意背於善良風俗（含純粹經濟損失）\n📌 184條第2項 ➔ 違反保護他人之法律（推定過失）"
+    },
+    {
+      "step": "3. FSRS 演算法精準複習",
+      "description": "將法條要件一鍵轉化為記憶閃卡，依個人遺忘曲線排程，國考法條牢固掌握。",
+      "snippetTitle": "今日待複習法條卡",
+      "snippetContent": "Q: 民法184條第1項前段是否包含純粹經濟損失？\n➔ [忘記 1天] [困難 3天] [掌握 7天]"
+    }
+  ],
+  "features": {
+    "subtitle": "Product Core Capabilities",
+    "title": "四大核心功能，重新定義你的學習工作流",
+    "description": "Flashleaf 將「聽講輸入」、「知識內化」與「長期記憶」整合為單一閉環，解決傳統學習方式零碎斷層的問題。",
+    "list": [
+      {
+        "icon": "mic",
+        "title": "課堂即時語音轉文字與離線辨識技術",
+        "content": "Flashleaf 內建高效語音引擎，支援前台與後台背景持續錄音。即使在教室沒有網路連線，亦可透過本地端 Sherpa-ONNX 離線聲學模型即時轉錄中文與英文語音，保障隱私且不耗費行動數據流量。",
+        "highlights": [
+          "支援長達數小時之課堂演講背景連續錄音",
+          "本地離線 ASR 模型，語音不強制上傳外部伺服器"
+        ]
+      },
+      {
+        "icon": "sparkles",
+        "title": "AI 結構化條列式摘要與考點萃取",
+        "content": "利用頂尖生成式 AI 技術，將冗長紛雜的課堂逐字稿快速整理為條理分明的 Markdown 重點筆記。系統能自動辨識核心定義、考試重點、推導流程與案例，大幅省去課後重複整理筆記的心力。",
+        "highlights": [
+          "自動去除口語贅字、重複語句與無效雜訊",
+          "自動標註重點關鍵字與段落小結"
+        ]
+      },
+      {
+        "icon": "network",
+        "title": "動態樹狀心智圖自動生成",
+        "content": "人類大腦對視覺化結構的理解速度遠快於純文字。Flashleaf 能依據筆記內容自動建構互動式動態樹狀圖（Mindmap），視覺化呈現章節架構與知識節點之間的關聯性，助你掌握全貌。",
+        "highlights": [
+          "支援節點自由縮放、展開與層級導航",
+          "一鍵將心智圖節點轉化為記憶閃卡"
+        ]
+      },
+      {
+        "icon": "brain",
+        "title": "次世代 FSRS 間隔重複記憶閃卡系統",
+        "content": "採用比傳統 Anki SM-2 更先進的 FSRS (Free Spaced Repetition Scheduler) 記憶演算法。根據每張卡片的難度、穩定性與可提取性動態調整複習週期，在遺忘臨界點前精準提醒。",
+        "highlights": [
+          "雙面卡片翻轉設計，支援填空題與概念題",
+          "即時統計每日學習楓葉進度與留存率指標"
+        ]
+      }
+    ]
+  },
+  "fsrsSection": {
+    "badge": "記憶科學革命",
+    "title": "為什麼 Flashleaf 選擇 FSRS\n而非傳統的 SM-2 演算法？",
+    "desc1": "傳統記憶卡軟體（如早期 Anki）多半採用 1980 年代開發的 SM-2 演算法，容易在卡片累積過多時造成「複習地獄（Review Hell）」與排程僵化。",
+    "desc2": "Flashleaf 全面導入 FSRS（自由間隔重複排程演算法），基於近代認知心理學與現代資料科學模型，能根據你的真實作答記錄精確計算：",
+    "metrics": [
+      {
+        "name": "難度 (Difficulty)",
+        "desc": "自動評估卡片記憶阻力"
+      },
+      {
+        "name": "穩定度 (Stability)",
+        "desc": "精準預測記憶存續天數"
+      },
+      {
+        "name": "可提取性 (Retrievability)",
+        "desc": "鎖定最佳複習時間點"
+      }
+    ],
+    "fsrsAdvantage": "動態評估難度與遺忘臨界點",
+    "fsrsAdvantageDesc": "根據每張卡片的穩定度與作答表現彈性排程，有效降低無效重複",
+    "sm2Disadvantage": "固定加權容易造成卡片過度積壓",
+    "sm2DisadvantageDesc": "依賴固定乘數調整間隔，較難因應不同個體的遺忘規律",
+    "conclusion": "透過 FSRS 系統，排程更加貼近真實記憶衰減規律，幫助學習者在適當的時機進行重點複習，避免在已熟記的內容上耗費過多時間。"
+  },
+  "pricing": {
+    "subtitle": "Transparent Pricing Plans",
+    "title": "透明且靈活的方案，專為學習進度量身打造",
+    "description": "Flashleaf 基礎功能永久免費使用。升級 Flashleaf Bloom Pro 解鎖無限 AI 算力與全功能。",
+    "plans": [
+      {
+        "name": "免費基礎版 (Free)",
+        "badge": "永久免費",
+        "price": "NT$ 0",
+        "period": "/ 永久免費",
+        "description": "適合初次體驗 AI 課堂筆記與日常手動製作單字閃卡的使用者。",
+        "features": [
+          "每日基礎課堂語音轉文字 (ASR)",
+          "手動建立筆記與雙面記憶閃卡",
+          "完整 FSRS 演算法間隔複習排程",
+          "本機裝置離線資料儲存"
+        ],
+        "excludedFeatures": [
+          "進階 AI 條列式總結與考點萃取 (每日次數限制)",
+          "動態樹狀心智圖自動生成"
+        ],
+        "cta": "開始免費使用",
+        "isFeatured": false
+      },
+      {
+        "name": "Bloom Pro (年訂閱)",
+        "badge": "Flashleaf Bloom 年度方案",
+        "featuredTag": "🔥 最超值推薦・享 7 天免費試用",
+        "price": "NT$ 1,080",
+        "period": "/ 年 (相當於 NT$ 90 / 月)",
+        "discountTip": "✨ 比月訂閱節省高達 40% 費用，前 7 天完全免費試用",
+        "description": "全面解鎖所有 AI 功能、無上限生成與動態心智圖，考生與專注學習者的終極利器。",
+        "features": [
+          "無限量 AI 課堂錄音即時條列摘要",
+          "動態樹狀心智圖無限制自動生成",
+          "無上限閃卡卡組與 AI 一鍵製卡",
+          "次世代 FSRS 深度演算法排程與留存率分析",
+          "雲端備份與跨裝置即時同步",
+          "專屬客服支援與優先搶先體驗新功能"
+        ],
+        "excludedFeatures": [],
+        "cta": "立即免費試用 7 天",
+        "isFeatured": true
+      },
+      {
+        "name": "Bloom Pro (月/半年方案)",
+        "badge": "彈性短期訂閱",
+        "price": "NT$ 150 / NT$ 720",
+        "period": "月繳 / 半年繳",
+        "description": "依據學期或考季需求自由選擇，隨時可在 Google Play 訂閱管理中取消。",
+        "subPlans": [
+          {
+            "name": "月訂閱方案",
+            "sub": "每月自動續訂",
+            "price": "NT$ 150",
+            "unit": "/月"
+          },
+          {
+            "name": "半年訂閱方案 (6個月)",
+            "sub": "相當於 NT$ 120/月 (省 20%)",
+            "price": "NT$ 720",
+            "unit": "/6個月"
+          }
+        ],
+        "features": [
+          "享與年訂閱相同之全部 Bloom Pro 高級功能",
+          "無綁約負擔，可隨時暫停或終止續訂"
+        ],
+        "excludedFeatures": [],
+        "cta": "在 App 內選購方案",
+        "isFeatured": false
+      }
+    ]
+  },
+  "faq": {
+    "subtitle": "Frequently Asked Questions",
+    "title": "常見問題解答 (FAQ)",
+    "description": "針對 Flashleaf 的功能運作、安全性、演算法原理與訂閱權益之詳細說明。",
+    "questions": [
+      {
+        "q": "Flashleaf 是什麼應用程式？與傳統筆記軟體有何不同？",
+        "answerDirect": "【直接解答】Flashleaf 是一款專為學習者整合「AI 課堂語音轉寫」、「結構化摘要」與「FSRS 間隔重複記憶閃卡」的智慧學習應用程式。",
+        "answerDetail": "傳統筆記軟體（如 Notion、GoodNotes）僅能單純記錄文字，使用者課後仍需耗費大量時間手動整理並容易遺忘；Flashleaf 透過 AI 自動將課堂語音提煉為重點與雙面閃卡，並由 FSRS 演算法科學排程複習，實現「上課聽懂、下課有筆記、考前牢記不忘」的完整學習循環。"
+      },
+      {
+        "q": "Flashleaf 的語音辨識會不會洩漏我的課堂錄音或隱私？",
+        "answerDirect": "【直接解答】不會。Flashleaf 採用本地離線語音辨識（Sherpa-ONNX）與高規格 HTTPS / TLS 加密架構，確保您的錄音與個人資料受到嚴密保護。",
+        "answerDetail": "離線語音模型直接在使用者手機端執行語音轉文字運算，未經您的操作不會擅自上傳音訊。同時，使用者的所有雲端資料皆採用 Firebase 企業級安全認證隔離，絕不會被用於未授權的第三方訓練。"
+      },
+      {
+        "q": "什麼是 FSRS 演算法？Flashleaf 的閃卡複習是如何運作的？",
+        "answerDirect": "【直接解答】FSRS（Free Spaced Repetition Scheduler）是現代記憶科學界廣受推崇的間隔重複演算法，能根據使用者的真實記憶狀況動態調節複習週期。",
+        "answerDetail": "FSRS 能評估卡片記憶在不同時間點的衰減狀況，並依據您每次作答的評分（忘記 / 困難 / 良好 / 簡單）動態計算下次複習的最佳間隔，幫助學習者在適當時機鞏固記憶，改善傳統排程卡片積壓與無效重複刷題的問題。"
+      },
+      {
+        "q": "Flashleaf 的收費方式為何？如何取消訂閱？",
+        "answerDirect": "【直接解答】Flashleaf 提供永久免費基礎版；升級 Bloom Pro 提供月繳 NT$150、半年繳 NT$720 或年繳 NT$1,080（年方案享 7 天免費試用）。",
+        "answerDetail": "所有訂閱皆透過 Google Play 官方金流系統進行安全扣款。使用者可隨時至 Google Play 商店 >「個人帳戶」>「付款與訂閱」中一鍵取消續訂，取消後仍可正常使用服務至當前週期結束。"
+      },
+      {
+        "q": "如果更換手機或不再使用，如何備份資料或徹底刪除帳號？",
+        "answerDirect": "【直接解答】使用者在 App 設定中登入 Google 帳號後即可自動同步雲端資料；若需刪除帳號，可隨時在 App 內點擊「刪除帳號」進行即時徹底清理。",
+        "answerDetail": "依據 Google Play 資料安全規範，執行刪除帳號後，伺服器上所有屬於該帳號的個人資料、筆記、卡片與錄音快取將於 7 個工作天內全數永久銷毀。"
+      },
+      {
+        "q": "Flashleaf 由哪支團隊開發？遇到技術問題如何聯絡客服？",
+        "answerDirect": "【直接解答】Flashleaf 由台灣獨立團隊 Summer Flowers Studio（夏花工作室）開發與維護。",
+        "answerDetail": "若您有任何功能建議、Bug 回報或商務合作需求，歡迎直接發送電子郵件至客服信箱：summerflowersstudio@gmail.com，我們將於 24 小時內為您回覆。"
+      }
+    ]
+  },
+  "privacySummary": {
+    "title": "隱私權政策與服務承諾",
+    "description": "我們高度重視使用者的個人隱私與資料安全，遵循 Google Play Developer Policy 與國際隱私法規標準。",
+    "cards": [
+      {
+        "title": "資料收集聲明",
+        "content": "我們僅收集用於使用者驗證之 Google 帳號基本資訊（姓名、電子郵件）以及使用者主動建立的學習筆記。音訊僅在使用者主動點擊錄音時於本地處理。"
+      },
+      {
+        "title": "傳輸加密與防護",
+        "content": "所有資料傳輸均經由嚴格的 HTTPS / TLS 加密協定，並由 Firebase 安全規則（Security Rules）限制僅有使用者本人能夠讀寫名下之筆記與閃卡資料。"
+      },
+      {
+        "title": "帳號與資料刪除權",
+        "content": "使用者擁有完整的個人資料自主權。您可隨時在 App 內執行「刪除帳號」，或聯繫 summerflowersstudio@gmail.com 申請永久銷毀。"
+      }
+    ]
+  },
+  "ctaSection": {
+    "title": "準備好讓每一次學習\n都開花結果了嗎？",
+    "description": "立即免費下載 Flashleaf，開啟 AI 課堂筆記與 FSRS 高效記憶的全新學習體驗。",
+    "buttonText": "免費下載 Android 版",
+    "note": "適用於 Android 8.0 以上之智慧型手機與平板電腦・iOS 版本即將推出"
+  },
+  "footer": {
+    "copyright": "Copyright © 2026 Summer Flowers Studio (夏花工作室). All rights reserved.",
+    "supportEmail": "summerflowersstudio@gmail.com"
+  }
+}
