@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>隱私權政策 (Privacy Policy) - Flashleaf</title>
-  <meta name="description" content="Flashleaf 應用程式隱私權政策。詳細說明我們如何收集、使用、保護您的個人資料、音訊錄音與 AI 筆記資料，以及您的資料刪除權利。" />
+  <meta name="description" content="Flashleaf 應用程式隱私權政策。詳細說明我們如何收集、使用、保護您的個人資料、音訊與 AI 資料，第三方 SDK 披露與帳號資料刪除機制。" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://summerflowersstudio-tw.github.io/privacy.html" />
 
@@ -39,83 +39,152 @@
       <div>
         <a href="index.html" class="text-xs text-maple-500 font-bold hover:underline mb-2 inline-block">&larr; 返回 Flashleaf 首頁</a>
         <h1 class="text-3xl font-extrabold text-maple-900">Flashleaf 隱私權政策</h1>
-        <p class="text-xs text-stone-500 mt-1">最後修訂日期：2026 年 8 月 20 日 ｜ 適用版本：v1.0.0 以上</p>
+        <p class="text-xs text-stone-500 mt-1">最後生效日期：2026 年 8 月 28 日 ｜ 適用版本：v1.0.0 以上</p>
       </div>
       <div class="text-xs text-stone-600 bg-stone-100 px-3 py-2 rounded-xl">
-        開發團隊：Summer Flowers Studio (夏花工作室)
+        開發團隊：Syllogism Studio
       </div>
     </div>
 
     <div class="space-y-8 text-sm text-stone-700 leading-relaxed">
       
+      <!-- 1. 前言與適用範圍 -->
       <section class="space-y-3">
         <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">1. 前言與適用範圍</h2>
         <p>
-          歡迎使用 <strong>Flashleaf</strong>（以下簡稱「本應用程式」或「我們」）。本隱私權政策旨在說明 Summer Flowers Studio 如何在您使用 Flashleaf 行動應用程式與相關服務時，收集、處理、利用及保護您的個人資料。
+          本隱私權政策適用於由 <strong>Syllogism Studio</strong>（以下簡稱「服務提供者」或「我們」）所營運之行動應用程式 <strong>Flashleaf</strong> 及其相關服務（以下合稱「本應用程式」）。
         </p>
         <p>
-          請您於下載、註冊或使用本應用程式前詳細閱讀本政策。若您繼續使用本服務，即視為您已理解並同意本隱私權政策之所有條款。
+          我們非常重視您的隱私權與個人資料保護。本政策旨在向您清楚說明當您下載、註冊或使用 Flashleaf 時，我們如何收集、處理、利用、保護您的個人資料，以及您依法所享有之各項權利。
         </p>
       </section>
 
+      <!-- 2. 我們收集的資料類型 -->
       <section class="space-y-3">
-        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">2. 我們收集的資料類型</h2>
+        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">2. 個人資料之收集項目與使用</h2>
+        <p>當您使用本應用程式時，我們可能會收集並處理以下類型的資料：</p>
         <ul class="list-disc pl-5 space-y-2">
-          <li><strong>帳號驗證資訊</strong>：當您使用 Google 帳號登入時，我們會透過 Firebase Authentication 取得您的公開個人檔案基本資料（如姓名、電子郵件地址與頭像），僅用於身分識別與帳號管理。</li>
-          <li><strong>課堂音訊與錄音權限</strong>：當您主動啟用課堂錄音功能時，本應用程式會請求麥克風權限（含背景前景服務 `FOREGROUND_SERVICE_MICROPHONE`）。音訊優先透過本機離線聲學引擎（Sherpa-ONNX）轉錄為文字，未經授權不會擅自將音訊傳輸至第三方。</li>
-          <li><strong>使用者建立之筆記與閃卡資料</strong>：包含您所產生的課堂逐字稿、AI 重點摘要、動態心智圖結構以及 FSRS 記憶閃卡之作答歷史與複習時間排程。</li>
-          <li><strong>訂閱與交易資訊</strong>：當您購買 Flashleaf Bloom Pro 方案時，金流由 Google Play Console 與 RevenueCat 處理，我們不會取得或儲存您的完整信用卡號。</li>
-          <li><strong>應用程式效能與崩潰日誌</strong>：用於改善 App 穩定度與排除閃退之匿名診斷資料。</li>
+          <li><strong>使用者主動提供之帳號資訊</strong>：包含您的電子郵件地址（Email）、使用者識別碼（User ID）與姓名/暱稱（透過 Google OAuth / Firebase 驗證），用於身分識別、雲端筆記同步與提供客戶支援。</li>
+          <li><strong>課堂音訊與學習資料</strong>：
+            <ul class="list-circle pl-5 mt-1 space-y-1 text-stone-600">
+              <li><strong>麥克風權限與音訊</strong>：當您啟用課堂錄音時，本應用程式會請求麥克風權限。音訊優先透過本機端離線聲學引擎（Sherpa-ONNX）進行轉錄，未經授權絕不外洩。</li>
+              <li><strong>筆記與學習紀錄</strong>：包含您產生的課堂逐字稿、AI 重點摘要、動態心智圖結構以及 FSRS 記憶閃卡之複習歷史排程。</li>
+            </ul>
+          </li>
+          <li><strong>自動收集之系統與診斷資料</strong>：包含您的裝置 IP 位址、作業系統版本、App 頁面瀏覽時間與頻率，以及用於改善穩定度的匿名崩潰日誌（Crash Reports）。</li>
+          <li><strong>訂閱交易資訊</strong>：當您訂閱 Bloom Pro 方案時，金流由 Google Play 與 RevenueCat 處理，我們不會存取或保留您的信用卡完整卡號。</li>
         </ul>
       </section>
 
+      <!-- 3. 人工智慧 (AI) 資料處理特別聲明 -->
       <section class="space-y-3">
-        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">3. 資料之使用目的</h2>
-        <p>我們收集您的資料僅用於以下合法正當之營運目的：</p>
+        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">3. 人工智慧 (AI) 技術與資料處理聲明</h2>
+        <p>
+          本應用程式整合人工智慧（AI）技術，以提供智慧課堂筆記摘要、概念心智圖生成與閃卡生成等學習輔助功能。
+        </p>
+        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 text-xs sm:text-sm space-y-2">
+          <p class="font-bold text-maple-900">AI 隱私承諾：</p>
+          <ul class="list-disc pl-5 space-y-1 text-stone-600">
+            <li>發送至 AI 模型之文字內容僅用於執行該次即時摘要與生成運算。</li>
+            <li>我們所使用的 API 商業協議<strong>嚴格禁止將您的私人學習內容用於基礎 AI 模型的二次訓練或公開資料庫</strong>。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. 第三方 SDK 與服務商清單 -->
+      <section class="space-y-3">
+        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">4. 第三方服務與資料分享 (Third-Party Services)</h2>
+        <p>
+          為了維持應用程式運行與基礎分析，僅有經去識別化或營運必要之資料會與第三方服務提供商進行安全串接。以下為本應用程式整合之第三方服務及其隱私權政策連結：
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <div class="p-3 bg-stone-50 rounded-xl border border-stone-200">
+            <p class="font-bold text-xs text-maple-900">Google Play Services</p>
+            <a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener" class="text-xs text-maple-500 hover:underline">查看 Google 隱私權政策 &rarr;</a>
+          </div>
+          <div class="p-3 bg-stone-50 rounded-xl border border-stone-200">
+            <p class="font-bold text-xs text-maple-900">Google Analytics for Firebase</p>
+            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" class="text-xs text-maple-500 hover:underline">查看 Firebase 分析隱私政策 &rarr;</a>
+          </div>
+          <div class="p-3 bg-stone-50 rounded-xl border border-stone-200">
+            <p class="font-bold text-xs text-maple-900">Firebase Crashlytics</p>
+            <a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener" class="text-xs text-maple-500 hover:underline">查看 Crashlytics 隱私政策 &rarr;</a>
+          </div>
+          <div class="p-3 bg-stone-50 rounded-xl border border-stone-200">
+            <p class="font-bold text-xs text-maple-900">RevenueCat</p>
+            <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" class="text-xs text-maple-500 hover:underline">查看 RevenueCat 隱私政策 &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 跨國資料傳輸與安全性 -->
+      <section class="space-y-3">
+        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">5. 資料安全與跨國傳輸 (Security & Data Transfer)</h2>
+        <p>
+          本應用程式採用 <strong>HTTPS / TLS 高階傳輸加密技術</strong>，雲端資料庫儲存於具備企業級安全標準之 Google Cloud / Firebase 架構，並嚴格遵循身分驗證存取控制。
+        </p>
+        <p>
+          因雲端伺服器架構之特性，您的資料可能在符合標準合約條款（SCCs）或同等安全保障下，安全傳輸至 Google 遍布全球之安全資料中心處理。若發生任何可能影響您個人資料之資安事件，我們將依法於第一時間通報並採取防護應對措施。
+        </p>
+      </section>
+
+      <!-- 6. 資料保存與保留期限 (Data Retention) -->
+      <section class="space-y-3">
+        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">6. 資料保存期限 (Data Retention Policy)</h2>
+        <p>我們僅於達成收集目的之必要期間內保存您的個人資料：</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>提供 AI 課堂筆記摘要、心智圖生成與 FSRS 間隔重複演算法排程服務。</li>
-          <li>進行跨裝置資料同步（透過 Google Cloud Firestore）。</li>
-          <li>提供客戶技術支援、Bug 修復與版本更新通知。</li>
-          <li>確保服務安全性並遵循 Google Play 開發人員政策法規。</li>
+          <li><strong>使用者帳號與學習筆記</strong>：於您帳號持續使用期間保留，或於帳號刪除後 12 個月內徹底抹除（除非依法令需延長保存）。</li>
+          <li><strong>自動診斷與崩潰日誌</strong>：自收集起最長保留 24 個月，逾期自動清理。</li>
+          <li><strong>匿名統計資料</strong>：已完全去識別化且無法還原身分之統計數據將無限期保留以作為產品效能研究。</li>
         </ul>
       </section>
 
+      <!-- 7. 使用者法定權利與帳號/資料刪除機制 -->
       <section class="space-y-3">
-        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">4. 資料安全與加密傳輸</h2>
+        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">7. 使用者法定權利與帳號刪除機制 (User Rights & Account Deletion)</h2>
         <p>
-          本應用程式所有與伺服器之間的通訊皆經由 <strong>HTTPS / TLS 協定進行高強度加密傳輸</strong>。資料儲存採用 Firebase 企業級安全架構與嚴格的 Security Rules 存取控制，除您本人經身分驗證之帳號外，任何未授權之第三方皆無法讀取您的私人學習資料。
+          依據中華民國《個人資料保護法》第 3 條及相關法規，您對您的個人資料享有以下法定權利：
         </p>
-      </section>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>查詢或請求閱覽、請求製給複製本。</li>
+          <li>請求補充或更正。</li>
+          <li>請求停止蒐集、處理或利用。</li>
+          <li>請求刪除您的個人帳號與所有關聯學習資料。</li>
+        </ul>
 
-      <section class="space-y-3">
-        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">5. 使用者權利與帳號/資料刪除機制 (Account Deletion)</h2>
-        <p>
-          依據 Google Play 資料安全政策與個人資料保護法，您對您的個人資料享有完全之自主控制權：
-        </p>
-        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-2">
-          <p class="font-bold text-maple-900">如何申請徹底刪除帳號與個人數據：</p>
-          <ol class="list-decimal pl-5 space-y-1 text-xs sm:text-sm">
-            <li><strong>App 內即時刪除</strong>：開啟 Flashleaf App &rarr; 進入「個人中心 / 設定」&rarr; 點擊「刪除帳號」，確認後系統將立即終止授權並觸發資料清理流程。</li>
-            <li><strong>客服信箱人工申請</strong>：若您已解除安裝 App，可隨時發送電子郵件至 <a href="mailto:summerflowersstudio@gmail.com" class="text-maple-500 font-bold underline">summerflowersstudio@gmail.com</a>，主旨註明「【資料刪除申請】+ 您的登入信箱」，我們將在 7 個工作天內從伺服器徹底刪除該帳號之所有關聯數據。</li>
+        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-2 mt-2">
+          <p class="font-bold text-maple-900">如何執行徹底刪除帳號與資料：</p>
+          <ol class="list-decimal pl-5 space-y-1 text-xs sm:text-sm text-stone-600">
+            <li><strong>App 內即時刪除</strong>：開啟 Flashleaf App &rarr; 進入「個人中心 / 設定」&rarr; 點擊「刪除帳號」，確認後系統將立即終止權限並啟動資料清理。</li>
+            <li><strong>人工客服申請</strong>：若您已解除安裝 App，可寄信至 <a href="mailto:syllogismandaltaria@gmail.com" class="text-maple-500 font-bold underline">syllogismandaltaria@gmail.com</a>，主旨註明「【資料刪除申請】+ 您的註冊信箱」，我們將在身分驗證後的 7 個工作天內從伺服器完全清除所有關聯數據。</li>
           </ol>
         </div>
       </section>
 
+      <!-- 8. 兒童與未成年人隱私保護 -->
       <section class="space-y-3">
-        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">6. 政策更新與聯絡我們</h2>
+        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">8. 兒童與未成年人隱私保護</h2>
         <p>
-          我們可能會因應法規變更或功能升級不定期修訂本政策。若您對本隱私權政策有任何疑問或隱私相關意見，歡迎透過以下方式聯繫我們：
+          本應用程式不以未滿 18 歲（或適用法規規定之年齡）之兒童為主要對象進行個資招攬。若您為未成年人，請在法定代理人同意下使用本服務。若我們發現有未經法定代理人授權而收集到兒童個人資料之情事，我們將在接獲通報後立即予以刪除。
+        </p>
+      </section>
+
+      <!-- 9. 政策修訂與聯繫我們 -->
+      <section class="space-y-3">
+        <h2 class="text-lg font-bold text-maple-900 border-l-4 border-maple-500 pl-3">9. 隱私權政策修訂與聯繫我們</h2>
+        <p>
+          我們可能會不定期更新本隱私權政策。任何重大變更將於本頁面公告，並更新上方生效日期。若您對本隱私權政策有任何疑問、建議或行使個資權利之需求，請隨時聯繫我們：
         </p>
         <p class="font-semibold text-maple-900">
-          Summer Flowers Studio（夏花工作室）<br />
-          客服信箱：<a href="mailto:summerflowersstudio@gmail.com" class="text-maple-500 underline">summerflowersstudio@gmail.com</a>
+          Syllogism Studio<br />
+          聯絡信箱：<a href="mailto:syllogismandaltaria@gmail.com" class="text-maple-500 underline">syllogismandaltaria@gmail.com</a>
         </p>
       </section>
 
     </div>
 
     <div class="mt-12 pt-6 border-t border-stone-200 text-center text-xs text-stone-500">
-      &copy; 2026 Summer Flowers Studio. 保留所有權利。
+      &copy; 2026 Syllogism Studio. 保留所有權利。
     </div>
 
   </div>
