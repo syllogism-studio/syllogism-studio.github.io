@@ -1,5 +1,5 @@
 # ==============================================================================
-# Flashleaf (夏花工作室 Summer Flowers Studio) - Robots Configuration
+# Flashleaf (Syllogism Studio) - Robots Configuration
 # Optimized for Search Engines & Generative AI Crawlers (AEO / GEO Optimization)
 # ==============================================================================
 
