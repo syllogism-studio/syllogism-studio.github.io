@@ -42,4 +42,4 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap Location
-Sitemap: https://summerflowersstudio-tw.github.io/sitemap.xml
+Sitemap: https://syllogism-studio.github.io/sitemap.xml
